@@ -1,6 +1,10 @@
 fragment userInfo on User{
-    id
     name
-    username
     email
+   todos{
+    data{
+        ...todoInfo
+    }
+   }
+
 }

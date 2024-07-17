@@ -1,3 +1,4 @@
+import '../../fragments/todos_fragments.graphql.dart';
 import '../../fragments/users_fragments.graphql.dart';
 import 'dart:async';
 import 'package:flutter/widgets.dart' as widgets;
@@ -192,6 +193,7 @@ const documentNodeQuerygetUsers = DocumentNode(definitions: [
     ]),
   ),
   fragmentDefinitionuserInfo,
+  fragmentDefinitiontodoInfo,
 ]);
 Query$getUsers _parserFn$Query$getUsers(Map<String, dynamic> data) =>
     Query$getUsers.fromJson(data);

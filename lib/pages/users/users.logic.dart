@@ -18,11 +18,13 @@ class UsersNotifier extends _$UsersNotifier {
             if (user == null) {
               continue;
             } else {
-              tempUsers.add(UserModel(
-                  id: user.id ?? '',
+              tempUsers.add(
+                UserModel(
                   name: user.name ?? '',
-                  username: user.username ?? '',
-                  email: user.email ?? ''));
+                  email: user.email ?? '',
+                  todos: user.todos!.data!,
+                ),
+              );
             }
           }
         }

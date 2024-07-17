@@ -1,7 +1,9 @@
 query getUsers{
     users{
         data{
-            ...userInfo
+            ...userInfo{
+                
+            }
         }
     }
 }

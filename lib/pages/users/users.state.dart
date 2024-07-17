@@ -1,13 +1,13 @@
+import 'package:graphql_test/fragments/todos_fragments.graphql.dart';
+
 class UserModel {
-  final String id;
   final String name;
-  final String username;
   final String email;
+  List<Fragment$todoInfo?>? todos;
 
   UserModel({
-    required this.id,
     required this.name,
-    required this.username,
     required this.email,
+    required this.todos,
   });
 }
