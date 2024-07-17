@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_test/client/client.dart';
-import 'package:graphql_test/main.graphql.dart';
 import 'package:graphql_test/users/users.page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -23,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const UsersPage(),
     );
   }
 }
