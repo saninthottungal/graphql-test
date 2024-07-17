@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:graphql_test/pages/users/users.logic.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class UsersPage extends StatelessWidget {
+class UsersPage extends ConsumerWidget {
   const UsersPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final users = ref.watch(usersNotifierProvider);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 93, 81),
-        title: Text("Users"),
+        backgroundColor: const Color.fromARGB(255, 255, 93, 81),
+        title: const Text("Users"),
         centerTitle: true,
       ),
-      body: ListView.separated(
-          itemBuilder: (context, index) {
-            return Card(
-              child: ListTile(
-                title: Text("data"),
-                subtitle: Text("sub"),
-              ),
-            );
-          },
-          separatorBuilder: (context, index) {
-            return SizedBox(height: 5);
-          },
-          itemCount: 10),
+      body: users.isEmpty
+          ? const Center(
+              child: Text("Loading..."),
+            )
+          : ListView.separated(
+              itemBuilder: (context, index) {
+                return Card(
+                  child: ListTile(
+                    title: Text(users[index].name),
+                    subtitle: Text(users[index].email),
+                  ),
+                );
+              },
+              separatorBuilder: (context, index) {
+                return const SizedBox(height: 5);
+              },
+              itemCount: users.length,
+            ),
     );
   }
 }
