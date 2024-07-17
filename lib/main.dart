@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:graphql_test/pages/users/users.page.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() async {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,24 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Flutter Demo Home Page'),
-      ),
-      body: const Center(
-        child: Text("data"),
-      ),
+      home: const UsersPage(),
     );
   }
 }

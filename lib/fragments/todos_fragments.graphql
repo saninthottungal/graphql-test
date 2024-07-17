@@ -1,0 +1,4 @@
+fragment todoInfo on Todo{
+    title
+    completed
+}

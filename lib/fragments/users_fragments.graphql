@@ -1,0 +1,10 @@
+fragment userInfo on User{
+    name
+    email
+   todos{
+    data{
+        ...todoInfo
+    }
+   }
+
+}
