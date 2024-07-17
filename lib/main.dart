@@ -30,8 +30,11 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Flutter Demo Home Page'),
       ),
-      body: const Center(
-        child: Text("data"),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {},
+          child: const Text("Click here"),
+        ),
       ),
     );
   }
