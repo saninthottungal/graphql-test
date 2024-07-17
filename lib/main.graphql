@@ -1,0 +1,11 @@
+query getUser($id: ID!){
+    user(id: $id){
+        ...userInfo
+    }
+}
+
+fragment userInfo on User{
+    name
+    username
+    email
+}
