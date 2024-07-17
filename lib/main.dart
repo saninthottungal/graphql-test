@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_test/users/users.page.dart';
+import 'package:graphql_test/pages/users/users.page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() async {
