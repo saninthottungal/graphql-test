@@ -1,6 +1,16 @@
 fragment userInfo on User{
     name
     email
+    posts{
+        data{
+            ...postsInfo
+        }
+    }
+    albums{
+        data{
+            ...albumInfo
+        }
+    }
    todos{
     data{
         ...todoInfo

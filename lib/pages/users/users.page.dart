@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graphql_test/pages/choose_page/choose_page.dart';
 import 'package:graphql_test/pages/todos/todos.page.dart';
 import 'package:graphql_test/pages/users/users.logic.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -26,8 +27,11 @@ class UsersPage extends ConsumerWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) =>
-                              TodosPage(todos: users[index].todos!),
+                          builder: (context) => ChoosePage(
+                            albums: users[index].albums ?? [],
+                            posts: users[index].posts ?? [],
+                            todos: users[index].todos ?? [],
+                          ),
                         ),
                       );
                     },

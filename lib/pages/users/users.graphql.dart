@@ -1,3 +1,5 @@
+import '../../fragments/albums_fragment.graphql.dart';
+import '../../fragments/posts_fragment.graphql.dart';
 import '../../fragments/todos_fragments.graphql.dart';
 import '../../fragments/users_fragments.graphql.dart';
 import 'dart:async';
@@ -193,6 +195,8 @@ const documentNodeQuerygetUsers = DocumentNode(definitions: [
     ]),
   ),
   fragmentDefinitionuserInfo,
+  fragmentDefinitionpostsInfo,
+  fragmentDefinitionalbumInfo,
   fragmentDefinitiontodoInfo,
 ]);
 Query$getUsers _parserFn$Query$getUsers(Map<String, dynamic> data) =>

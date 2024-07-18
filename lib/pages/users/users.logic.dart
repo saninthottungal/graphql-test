@@ -22,7 +22,9 @@ class UsersNotifier extends _$UsersNotifier {
                 UserModel(
                   name: user.name ?? '',
                   email: user.email ?? '',
-                  todos: user.todos!.data!,
+                  todos: user.todos!.data,
+                  albums: user.albums?.data,
+                  posts: user.posts?.data,
                 ),
               );
             }

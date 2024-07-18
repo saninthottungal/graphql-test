@@ -1,0 +1,9 @@
+fragment albumInfo on Album{
+    title
+    photos{
+        data{
+            title
+            url
+        }
+    }
+}
